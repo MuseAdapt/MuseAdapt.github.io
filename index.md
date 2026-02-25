@@ -1,6 +1,6 @@
 <div style="text-align: center"> 
 
-<h1> MuseAdapt: Melody-Aware Music Adaptation via Structure-Texture Disentanglement </h1>
+<h1> MuseAdapt: Melody-Aware Music Adaptation <br> via Structure-Texture Disentanglement </h1>
 
 Anonymous Authors
 
@@ -38,46 +38,49 @@ The baseline models include: *MusicGen-Stereo-Melody, MusicGen-Stereo-Melody-Lar
 ### Part 1: Music Adaptation Task (Cross-Instrument & Style Transfer)
 In this challenging real-world scenario, models are tasked with generating a target audio segment with a distinct instrumentation/style while preserving the perceptual melodic identity of the source audio. **Our model (MuseAdapt) successfully disentangles the melody and follows the text prompt, whereas baselines often simply replicate the source texture.**
 
-<br>
-
 <div style="background-color: #f8f9fa; padding: 15px; border-radius: 10px; margin-bottom: 30px; border: 1px solid #dee2e6;">
   <h4>🎵 Example 1: Piano ➔ Acoustic Guitar</h4>
   <p><b>Song Name:</b> <i>Boom Clap</i></p>
   <p><b>Text Prompt:</b> <i>This piece features a blend of rock and classical instrumentation, led by a virtuosic electric violin with a bright, cutting timbre that soars over the ensemble. The foundation is provided by thick, distorted electric guitars, a deep and driving bass guitar, and a powerful rock drum kit, all while atmospheric synthesizer pads add a subtle, ethereal layer in the background. The music aligns with the symphonic or neoclassical metal genre, blending the fast tempo, driving rock beat, and powerful chord progressions of metal with the complex melodic structures and technical virtuosity of classical music. </i></p>
   
-  <table style="width: 100%; table-layout: fixed; text-align: center; margin-bottom: 15px;">
-    <tr>
-      <th style="width: 50%;">Source Audio (Melodic Skeleton)</th>
-      <th style="width: 50%;">Reference Audio (Target Texture)</th>
-    </tr>
-    <tr>
-      <td><audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/Boom Clap_4IT6QLUrNts_HKgtPYhkcWo_0.wav" controls style="width: 95%; outline: none;"></audio></td>
-      <td><audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/Boom Clap_4IT6QLUrNts_HKgtPYhkcWo_0.wav" controls style="width: 95%; outline: none;"></audio></td>
-    </tr>
-  </table>
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; text-align: center; margin-bottom: 20px;">
+    <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
+      <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Source Audio (Melodic Skeleton)</div>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/Boom Clap_4IT6QLUrNts_HKgtPYhkcWo_0.wav" controls style="width: 100%; outline: none;"></audio>
+    </div>
+    <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
+      <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Reference Audio (Target Texture)</div>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/Boom Clap_4IT6QLUrNts_HKgtPYhkcWo_0.wav" controls style="width: 100%; outline: none;"></audio>
+    </div>
+  </div>
 
-  <table style="width: 100%; table-layout: fixed; text-align: center;">
-    <tr>
-      <th style="width: 33.3%; color: #d9534f;">MuseAdapt (Ours) ✨</th>
-      <th style="width: 33.3%;">MusicGen-Melody</th>
-      <th style="width: 33.3%;">MusicGen-Melody-Large</th>
-    </tr>
-    <tr>
-      <td><audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/Boom Clap_4IT6QLUrNts_HKgtPYhkcWo_0.wav" controls style="width: 95%; outline: none;"></audio></td>
-      <td><audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/Boom Clap_4IT6QLUrNts_HKgtPYhkcWo_0.wav" controls style="width: 95%; outline: none;"></audio></td>
-      <td><audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/Boom Clap_4IT6QLUrNts_HKgtPYhkcWo_0.wav" controls style="width: 95%; outline: none;"></audio></td>
-    </tr>
-    <tr>
-      <th>MuseControlLite</th>
-      <th>SongEcho-Base</th>
-      <th>SongEcho-Large</th>
-    </tr>
-    <tr>
-      <td><audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/Boom Clap_4IT6QLUrNts_HKgtPYhkcWo_0.wav" controls style="width: 95%; outline: none;"></audio></td>
-      <td><audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/Boom Clap_4IT6QLUrNts_HKgtPYhkcWo_0.wav" controls style="width: 95%; outline: none;"></audio></td>
-      <td><audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/Boom Clap_4IT6QLUrNts_HKgtPYhkcWo_0.wav" controls style="width: 95%; outline: none;"></audio></td>
-    </tr>
-  </table>
+  <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; text-align: center;">
+    <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
+      <div style="font-weight: bold; color: #d9534f; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseAdapt (Ours) ✨</div>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/Boom Clap_4IT6QLUrNts_HKgtPYhkcWo_0.wav" controls style="width: 100%; outline: none;"></audio>
+    </div>
+    <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
+      <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody</div>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/Boom Clap_4IT6QLUrNts_HKgtPYhkcWo_0.wav" controls style="width: 100%; outline: none;"></audio>
+    </div>
+    <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
+      <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody-Large</div>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/Boom Clap_4IT6QLUrNts_HKgtPYhkcWo_0.wav" controls style="width: 100%; outline: none;"></audio>
+    </div>
+    <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
+      <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseControlLite</div>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/Boom Clap_4IT6QLUrNts_HKgtPYhkcWo_0.wav" controls style="width: 100%; outline: none;"></audio>
+    </div>
+    <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
+      <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Base</div>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/Boom Clap_4IT6QLUrNts_HKgtPYhkcWo_0.wav" controls style="width: 100%; outline: none;"></audio>
+    </div>
+    <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
+      <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Large</div>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/Boom Clap_4IT6QLUrNts_HKgtPYhkcWo_0.wav" controls style="width: 100%; outline: none;"></audio>
+    </div>
+
+  </div>
 </div>
 
 
