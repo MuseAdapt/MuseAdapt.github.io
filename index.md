@@ -13,7 +13,7 @@ Supporting webpage for ICML 2026<br>
 
 <div style="text-align: justify"> 
 
-<h2>Abstract</h2>
+# Abstract
 
 Melody-conditioned music generation is a cornerstone of controllable synthesis. However, existing self-reconstruction paradigms, which condition models on melodic features extracted from the target audio, often fail to separate semantic melody from acoustic texture. 
 This entanglement encourages models to replicate the source audio rather than perform genuine melodic adaptation. 
@@ -29,7 +29,7 @@ Experiments demonstrate that MuseAdapt significantly outperforms self-reconstruc
 <img src="method.png">
 </p>
 
-## 🎧 Audio Samples
+# 🎧 Audio Samples
 
 As discussed in our paper, existing melody-conditioned models trained via the **self-reconstruction paradigm** often suffer from **texture leakage**. Because these models learn to reconstruct the target audio using control signals extracted from the exact same audio, they struggle to separate semantic melody from acoustic texture. Consequently, they tend to overfit to the control conditions and ignore text prompts during real-world inference.
 
@@ -37,7 +37,7 @@ To demonstrate the superiority of **MuseAdapt** in decoupling structure from tex
 
 ---
 
-### Part 1: Music Adaptation Task (Cross-Instrument & Style Transfer)
+## Part 1: Music Adaptation Task
 In this challenging real-world scenario, models are tasked with generating a stylistically distinct audio segment based on a text prompt, while preserving the perceptual melodic identity of the source audio. **Our model (MuseAdapt) successfully disentangles the melody and follows the text prompt, whereas baselines often simply replicate the source texture.**
 
 
