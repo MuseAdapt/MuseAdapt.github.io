@@ -1,46 +1,3 @@
-<div style="text-align: center"> 
-
-<h1> MuseAdapt: Melody-Aware Music Adaptation <br> via Structure-Texture Disentanglement </h1>
-
-Anonymous Authors
-
-<p>
-Supporting webpage for ICML 2026<br>
-</p>
-
-</div>
-
-
-<div style="text-align: justify"> 
-
-<h2>Abstract</h2>
-
-Melody-conditioned music generation is a cornerstone of controllable synthesis. However, existing self-reconstruction paradigms, which condition models on melodic features extracted from the target audio, often fail to separate semantic melody from acoustic texture. 
-This entanglement encourages models to replicate the source audio rather than perform genuine melodic adaptation. 
-To bridge this gap, we define melody-aware music adaptation (MAMA), a task focused on generating stylistically diverse music that preserves melodic identity without enforcing frame-level reconstruction. 
-We introduce MAMA-20k, the first large-scale dataset for this task, featuring weakly paired segments with shared melodic skeletons but distinct acoustic realizations. 
-Leveraging this data, we propose MuseAdapt, a diffusion-based framework that achieves disentangled melodic control via a contrastive encoder. 
-Experiments demonstrate that MuseAdapt significantly outperforms self-reconstruction baselines in cross-instrument and real-world scenarios, highlighting the necessity of disentangled supervision for robust music synthesis.
-
-<br>
-
-</div>
-<p align="center">
-<img src="method.png">
-</p>
-
-## 🎧 Audio Samples
-
-As discussed in our paper, existing melody-conditioned models trained via the **self-reconstruction paradigm** often suffer from **texture leakage**. Because these models learn to reconstruct the target audio using control signals extracted from the exact same audio, they struggle to separate semantic melody from acoustic texture. Consequently, they tend to overfit to the control conditions and ignore text prompts during real-world inference.
-
-To demonstrate the superiority of **MuseAdapt** in decoupling structure from texture, we present our audio samples in two distinct parts. The baseline models include: [MusicGen-Stereo-Melody](https://huggingface.co/facebook/musicgen-stereo-melody)<a href="#note1" id="note1ref">[1]</a>, [MusicGen-Stereo-Melody-Large](https://huggingface.co/facebook/musicgen-stereo-melody-large)<a href="#note1" id="note1ref">[1]</a>, [MuseControlLite](https://huggingface.co/fundwotsai2001/Text-to-Music_control_family)<a href="#note2" id="note2ref">[2]</a>, [SongEcho-base](https://huggingface.co/fundwotsai2001/Text-to-Music_control_family)<a href="#note3" id="note3ref">[3]</a>, and [SongEcho-large](https://huggingface.co/fundwotsai2001/Text-to-Music_control_family)<a href="#note3" id="note3ref">[3]</a>. All generated samples are approximately **47 seconds** long.
-
----
-
-### Part 1: Music Adaptation Task (Cross-Instrument & Style Transfer)
-In this challenging real-world scenario, models are tasked with generating a stylistically distinct audio segment based on a text prompt, while preserving the perceptual melodic identity of the source audio. **Our model (MuseAdapt) successfully disentangles the melody and follows the text prompt, whereas baselines often simply replicate the source texture.**
-
-
 <div style="background-color: #f8f9fa; padding: 15px; border-radius: 10px; margin-bottom: 30px; border: 1px solid #dee2e6;">
   <h4>🎵 Example 1: Piano ➔ Acoustic Guitar</h4>
   <p><b>Song Name:</b> <i>Boom Clap</i></p>
@@ -1976,11 +1933,3 @@ In this challenging real-world scenario, models are tasked with generating a sty
 </div>
 
 
-## References 
-
-<a id="note1" href="#note1ref">[1]</a> Copet, J., Kreuk, F., Gat, I., Remez, T., Kant, D., Synnaeve, G., Adi, Y., and Defossez, A. Simple and controllable music generation. In Proc. NeurIPS, New Orleans, 2023.
-
-<a id="note2" href="#note2ref">[1]</a> Tsai, F.-D., Wu, S.-L., Lee, W., Yang, S.-P., Chen, B.-R., Cheng, H.-C., and Yang, Y.-H. Musecontrollite: Multifunctional music generation with lightweight conditioners. In Proc. ICML, Vancouver, 2025.
-
-<a id="note3" href="#note3ref">[1]</a> Li, S., Li, Y., Wang, Z., Zhang, Y., Wu, F., Deussen, O., Lee, T.-Y., and Dong, W. Songecho: Towards cover
-song generation via instance-adaptive element-wise linear modulation. In Proc. ICLR, Rio de Janeiro, 2026.
