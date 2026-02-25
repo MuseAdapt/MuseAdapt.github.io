@@ -45,27 +45,27 @@ In this challenging real-world scenario, models are tasked with generating a tar
   <p><b>Song Name:</b> <i>Boom Clap</i></p>
   <p><b>Text Prompt:</b> <i>This piece features a blend of rock and classical instrumentation, led by a virtuosic electric violin with a bright, cutting timbre that soars over the ensemble. The foundation is provided by thick, distorted electric guitars, a deep and driving bass guitar, and a powerful rock drum kit, all while atmospheric synthesizer pads add a subtle, ethereal layer in the background. The music aligns with the symphonic or neoclassical metal genre, blending the fast tempo, driving rock beat, and powerful chord progressions of metal with the complex melodic structures and technical virtuosity of classical music. </i></p>
   
-  <table style="width: 100%; text-align: center; margin-bottom: 15px;">
+  <table style="width: 100%; table-layout: fixed; text-align: center; margin-bottom: 15px;">
     <tr>
       <th style="width: 50%;">Source Audio (Melodic Skeleton)</th>
       <th style="width: 50%;">Reference Audio (Target Texture)</th>
     </tr>
     <tr>
-      <td><audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/Boom Clap_4IT6QLUrNts_HKgtPYhkcWo_0.wav" controls style="width: 90%; min-width: 260px;"></audio></td>
-      <td><audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/Boom Clap_4IT6QLUrNts_HKgtPYhkcWo_0.wav" controls style="width: 90%; min-width: 260px;"></audio></td>
+      <td><audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/Boom Clap_4IT6QLUrNts_HKgtPYhkcWo_0.wav" controls style="width: 95%; outline: none;"></audio></td>
+      <td><audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/Boom Clap_4IT6QLUrNts_HKgtPYhkcWo_0.wav" controls style="width: 95%; outline: none;"></audio></td>
     </tr>
   </table>
 
-  <table style="width: 100%; text-align: center;">
+  <table style="width: 100%; table-layout: fixed; text-align: center;">
     <tr>
       <th style="width: 33.3%; color: #d9534f;">MuseAdapt (Ours) ✨</th>
       <th style="width: 33.3%;">MusicGen-Melody</th>
       <th style="width: 33.3%;">MusicGen-Melody-Large</th>
     </tr>
     <tr>
-      <td><audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/Boom Clap_4IT6QLUrNts_HKgtPYhkcWo_0.wav" controls style="width: 90%; min-width: 200px;"></audio></td>
-      <td><audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/Boom Clap_4IT6QLUrNts_HKgtPYhkcWo_0.wav" controls style="width: 90%; min-width: 200px;"></audio></td>
-      <td><audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/Boom Clap_4IT6QLUrNts_HKgtPYhkcWo_0.wav" controls style="width: 90%; min-width: 200px;"></audio></td>
+      <td><audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/Boom Clap_4IT6QLUrNts_HKgtPYhkcWo_0.wav" controls style="width: 95%; outline: none;"></audio></td>
+      <td><audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/Boom Clap_4IT6QLUrNts_HKgtPYhkcWo_0.wav" controls style="width: 95%; outline: none;"></audio></td>
+      <td><audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/Boom Clap_4IT6QLUrNts_HKgtPYhkcWo_0.wav" controls style="width: 95%; outline: none;"></audio></td>
     </tr>
     <tr>
       <th>MuseControlLite</th>
@@ -73,9 +73,9 @@ In this challenging real-world scenario, models are tasked with generating a tar
       <th>SongEcho-Large</th>
     </tr>
     <tr>
-      <td><audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/Boom Clap_4IT6QLUrNts_HKgtPYhkcWo_0.wav" controls style="width: 90%; min-width: 200px;"></audio></td>
-      <td><audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/Boom Clap_4IT6QLUrNts_HKgtPYhkcWo_0.wav" controls style="width: 90%; min-width: 200px;"></audio></td>
-      <td><audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/Boom Clap_4IT6QLUrNts_HKgtPYhkcWo_0.wav" controls style="width: 90%; min-width: 200px;"></audio></td>
+      <td><audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/Boom Clap_4IT6QLUrNts_HKgtPYhkcWo_0.wav" controls style="width: 95%; outline: none;"></audio></td>
+      <td><audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/Boom Clap_4IT6QLUrNts_HKgtPYhkcWo_0.wav" controls style="width: 95%; outline: none;"></audio></td>
+      <td><audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/Boom Clap_4IT6QLUrNts_HKgtPYhkcWo_0.wav" controls style="width: 95%; outline: none;"></audio></td>
     </tr>
   </table>
 </div>
