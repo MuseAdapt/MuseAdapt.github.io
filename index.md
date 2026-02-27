@@ -484,7 +484,7 @@ In this challenging real-world scenario, models are tasked with generating a sty
 
 <div style="background-color: #f8f9fa; padding: 15px; border-radius: 10px; margin-bottom: 30px; border: 1px solid #dee2e6;">
   <h4>🎵 Example 11: Flute ➔ Guitar</h4>
-  <p><b>Song Name:</b> <i>Like I'm Gonna Lose You_GCwGFSleIo4</i></p>
+  <p><b>Song Name:</b> <i>Like I'm Gonna Lose You</i></p>
   <p><b>Text Prompt:</b> <i>This instrumental piece features a core ensemble of an acoustic guitar, an electric guitar, a bass guitar, and a drum kit. The acoustic guitar provides a rhythmic and harmonic foundation with a bright, metallic, and resonant timbre, while the lead electric guitar, characterized by a warm, rounded, and slightly gritty timbre, executes soulful melodic lines using smooth bends and sustained notes.</i></p>
   
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; text-align: center; margin-bottom: 20px;">
@@ -1247,7 +1247,7 @@ In this challenging real-world scenario, models are tasked with generating a sty
 </div>
 
 
-## References 
+# References 
 
 <a id="note1" href="#note1ref">[1]</a> Copet, J., Kreuk, F., Gat, I., Remez, T., Kant, D., Synnaeve, G., Adi, Y., and Defossez, A. Simple and controllable music generation. In Proc. NeurIPS, New Orleans, 2023.
 
