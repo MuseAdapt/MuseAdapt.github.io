@@ -14,6 +14,7 @@ Supporting webpage for ICML 2026<br>
 
 Melody-conditioned music generation is a cornerstone of controllable synthesis. However, existing self-reconstruction paradigms, which condition models on melodic features extracted from the target audio, often fail to separate semantic melody from acoustic texture. This entanglement encourages models to replicate the source audio rather than perform genuine melodic adaptation. To bridge this gap, we define melody-aware music adaptation (MAMA), a task focused on generating stylistically diverse music that preserves melodic identity without enforcing frame-level reconstruction. We introduce MAMA-20k, the first large-scale dataset for this task, featuring weakly paired segments with shared melodic skeletons but distinct acoustic realizations. Leveraging this data, we propose MuseAdapt, a diffusion-based framework that achieves disentangled melodic control via a contrastive encoder. Experiments demonstrate that MuseAdapt significantly outperforms self-reconstruction baselines in cross-instrument and real-world scenarios, highlighting the necessity of disentangled supervision for robust music synthesis.
 
+**Open Source**: We will open-source our model, code, dataset metadata, and the data processing pipeline upon paper acceptance.
 <br>
 
 <p align="center">
@@ -40,38 +41,38 @@ In this challenging real-world scenario, models are tasked with generating a sty
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; text-align: center; margin-bottom: 20px;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Source Audio (Melodic Skeleton)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/Darkside_yxhhDNIv3P4_cB2l0OnjG6M_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/Darkside_yxhhDNIv3P4_cB2l0OnjG6M_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Reference Audio (Target Texture)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/Darkside_yxhhDNIv3P4_cB2l0OnjG6M_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/Darkside_yxhhDNIv3P4_cB2l0OnjG6M_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 
   <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; text-align: center;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; color: #d9534f; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseAdapt (Ours) ✨</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/Darkside_yxhhDNIv3P4_cB2l0OnjG6M_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/Darkside_yxhhDNIv3P4_cB2l0OnjG6M_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/Darkside_yxhhDNIv3P4_cB2l0OnjG6M_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/Darkside_yxhhDNIv3P4_cB2l0OnjG6M_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/Darkside_yxhhDNIv3P4_cB2l0OnjG6M_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/Darkside_yxhhDNIv3P4_cB2l0OnjG6M_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseControlLite</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/Darkside_yxhhDNIv3P4_cB2l0OnjG6M_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/Darkside_yxhhDNIv3P4_cB2l0OnjG6M_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Base</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/Darkside_yxhhDNIv3P4_cB2l0OnjG6M_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/Darkside_yxhhDNIv3P4_cB2l0OnjG6M_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/Darkside_yxhhDNIv3P4_cB2l0OnjG6M_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/Darkside_yxhhDNIv3P4_cB2l0OnjG6M_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 </div>
@@ -85,38 +86,38 @@ In this challenging real-world scenario, models are tasked with generating a sty
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; text-align: center; margin-bottom: 20px;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Source Audio (Melodic Skeleton)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/Don't Wanna Know_rn6t841tzL8_iENs7cGB42Q_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/Don't Wanna Know_rn6t841tzL8_iENs7cGB42Q_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Reference Audio (Target Texture)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/Don't Wanna Know_rn6t841tzL8_iENs7cGB42Q_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/Don't Wanna Know_rn6t841tzL8_iENs7cGB42Q_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 
   <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; text-align: center;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; color: #d9534f; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseAdapt (Ours) ✨</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/Don't Wanna Know_rn6t841tzL8_iENs7cGB42Q_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/Don't Wanna Know_rn6t841tzL8_iENs7cGB42Q_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/Don't Wanna Know_rn6t841tzL8_iENs7cGB42Q_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/Don't Wanna Know_rn6t841tzL8_iENs7cGB42Q_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/Don't Wanna Know_rn6t841tzL8_iENs7cGB42Q_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/Don't Wanna Know_rn6t841tzL8_iENs7cGB42Q_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseControlLite</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/Don't Wanna Know_rn6t841tzL8_iENs7cGB42Q_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/Don't Wanna Know_rn6t841tzL8_iENs7cGB42Q_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Base</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/Don't Wanna Know_rn6t841tzL8_iENs7cGB42Q_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/Don't Wanna Know_rn6t841tzL8_iENs7cGB42Q_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/Don't Wanna Know_rn6t841tzL8_iENs7cGB42Q_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/Don't Wanna Know_rn6t841tzL8_iENs7cGB42Q_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 </div>
@@ -130,38 +131,38 @@ In this challenging real-world scenario, models are tasked with generating a sty
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; text-align: center; margin-bottom: 20px;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Source Audio (Melodic Skeleton)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/Drag Me Down_E--mt0BjxOo_S49hNSDDgWo.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/Drag Me Down_E--mt0BjxOo_S49hNSDDgWo.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Reference Audio (Target Texture)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/Drag Me Down_E--mt0BjxOo_S49hNSDDgWo.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/Drag Me Down_E--mt0BjxOo_S49hNSDDgWo.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 
   <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; text-align: center;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; color: #d9534f; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseAdapt (Ours) ✨</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/Drag Me Down_E--mt0BjxOo_S49hNSDDgWo.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/Drag Me Down_E--mt0BjxOo_S49hNSDDgWo.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/Drag Me Down_E--mt0BjxOo_S49hNSDDgWo.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/Drag Me Down_E--mt0BjxOo_S49hNSDDgWo.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/Drag Me Down_E--mt0BjxOo_S49hNSDDgWo.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/Drag Me Down_E--mt0BjxOo_S49hNSDDgWo.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseControlLite</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/Drag Me Down_E--mt0BjxOo_S49hNSDDgWo.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/Drag Me Down_E--mt0BjxOo_S49hNSDDgWo.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Base</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/Drag Me Down_E--mt0BjxOo_S49hNSDDgWo.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/Drag Me Down_E--mt0BjxOo_S49hNSDDgWo.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/Drag Me Down_E--mt0BjxOo_S49hNSDDgWo.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/Drag Me Down_E--mt0BjxOo_S49hNSDDgWo.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 </div>
@@ -175,38 +176,38 @@ In this challenging real-world scenario, models are tasked with generating a sty
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; text-align: center; margin-bottom: 20px;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Source Audio (Melodic Skeleton)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/Intentions_2qofYO_o-14_6ZbEkPmEFO4_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/Intentions_2qofYO_o-14_6ZbEkPmEFO4_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Reference Audio (Target Texture)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/Intentions_2qofYO_o-14_6ZbEkPmEFO4_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/Intentions_2qofYO_o-14_6ZbEkPmEFO4_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 
   <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; text-align: center;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; color: #d9534f; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseAdapt (Ours) ✨</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/Intentions_2qofYO_o-14_6ZbEkPmEFO4_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/Intentions_2qofYO_o-14_6ZbEkPmEFO4_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/Intentions_2qofYO_o-14_6ZbEkPmEFO4_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/Intentions_2qofYO_o-14_6ZbEkPmEFO4_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/Intentions_2qofYO_o-14_6ZbEkPmEFO4_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/Intentions_2qofYO_o-14_6ZbEkPmEFO4_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseControlLite</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/Intentions_2qofYO_o-14_6ZbEkPmEFO4_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/Intentions_2qofYO_o-14_6ZbEkPmEFO4_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Base</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/Intentions_2qofYO_o-14_6ZbEkPmEFO4_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/Intentions_2qofYO_o-14_6ZbEkPmEFO4_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/Intentions_2qofYO_o-14_6ZbEkPmEFO4_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/Intentions_2qofYO_o-14_6ZbEkPmEFO4_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 </div>
@@ -220,38 +221,38 @@ In this challenging real-world scenario, models are tasked with generating a sty
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; text-align: center; margin-bottom: 20px;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Source Audio (Melodic Skeleton)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/Intentions_TxIP8CvsrUU_sS9-zYTpl_s_2.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/Intentions_TxIP8CvsrUU_sS9-zYTpl_s_2.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Reference Audio (Target Texture)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/Intentions_TxIP8CvsrUU_sS9-zYTpl_s_2.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/Intentions_TxIP8CvsrUU_sS9-zYTpl_s_2.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 
   <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; text-align: center;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; color: #d9534f; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseAdapt (Ours) ✨</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/Intentions_TxIP8CvsrUU_sS9-zYTpl_s_2.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/Intentions_TxIP8CvsrUU_sS9-zYTpl_s_2.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/Intentions_TxIP8CvsrUU_sS9-zYTpl_s_2.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/Intentions_TxIP8CvsrUU_sS9-zYTpl_s_2.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/Intentions_TxIP8CvsrUU_sS9-zYTpl_s_2.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/Intentions_TxIP8CvsrUU_sS9-zYTpl_s_2.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseControlLite</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/Intentions_TxIP8CvsrUU_sS9-zYTpl_s_2.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/Intentions_TxIP8CvsrUU_sS9-zYTpl_s_2.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Base</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/Intentions_TxIP8CvsrUU_sS9-zYTpl_s_2.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/Intentions_TxIP8CvsrUU_sS9-zYTpl_s_2.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/Intentions_TxIP8CvsrUU_sS9-zYTpl_s_2.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/Intentions_TxIP8CvsrUU_sS9-zYTpl_s_2.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 </div>
@@ -265,38 +266,38 @@ In this challenging real-world scenario, models are tasked with generating a sty
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; text-align: center; margin-bottom: 20px;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Source Audio (Melodic Skeleton)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/Kiss Me_57-CfYJlzK0_LPaD-UtBWXI_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/Kiss Me_57-CfYJlzK0_LPaD-UtBWXI_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Reference Audio (Target Texture)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/Kiss Me_57-CfYJlzK0_LPaD-UtBWXI_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/Kiss Me_57-CfYJlzK0_LPaD-UtBWXI_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 
   <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; text-align: center;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; color: #d9534f; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseAdapt (Ours) ✨</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/Kiss Me_57-CfYJlzK0_LPaD-UtBWXI_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/Kiss Me_57-CfYJlzK0_LPaD-UtBWXI_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/Kiss Me_57-CfYJlzK0_LPaD-UtBWXI_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/Kiss Me_57-CfYJlzK0_LPaD-UtBWXI_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/Kiss Me_57-CfYJlzK0_LPaD-UtBWXI_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/Kiss Me_57-CfYJlzK0_LPaD-UtBWXI_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseControlLite</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/Kiss Me_57-CfYJlzK0_LPaD-UtBWXI_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/Kiss Me_57-CfYJlzK0_LPaD-UtBWXI_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Base</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/Kiss Me_57-CfYJlzK0_LPaD-UtBWXI_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/Kiss Me_57-CfYJlzK0_LPaD-UtBWXI_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/Kiss Me_57-CfYJlzK0_LPaD-UtBWXI_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/Kiss Me_57-CfYJlzK0_LPaD-UtBWXI_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 </div>
@@ -310,38 +311,38 @@ In this challenging real-world scenario, models are tasked with generating a sty
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; text-align: center; margin-bottom: 20px;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Source Audio (Melodic Skeleton)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/Liar_aDNT-1w-KYw_v3zaAMHauGg_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/Liar_aDNT-1w-KYw_v3zaAMHauGg_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Reference Audio (Target Texture)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/Liar_aDNT-1w-KYw_v3zaAMHauGg_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/Liar_aDNT-1w-KYw_v3zaAMHauGg_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 
   <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; text-align: center;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; color: #d9534f; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseAdapt (Ours) ✨</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/Liar_aDNT-1w-KYw_v3zaAMHauGg_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/Liar_aDNT-1w-KYw_v3zaAMHauGg_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/Liar_aDNT-1w-KYw_v3zaAMHauGg_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/Liar_aDNT-1w-KYw_v3zaAMHauGg_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/Liar_aDNT-1w-KYw_v3zaAMHauGg_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/Liar_aDNT-1w-KYw_v3zaAMHauGg_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseControlLite</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/Liar_aDNT-1w-KYw_v3zaAMHauGg_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/Liar_aDNT-1w-KYw_v3zaAMHauGg_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Base</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/Liar_aDNT-1w-KYw_v3zaAMHauGg_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/Liar_aDNT-1w-KYw_v3zaAMHauGg_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/Liar_aDNT-1w-KYw_v3zaAMHauGg_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/Liar_aDNT-1w-KYw_v3zaAMHauGg_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 </div>
@@ -355,38 +356,38 @@ In this challenging real-world scenario, models are tasked with generating a sty
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; text-align: center; margin-bottom: 20px;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Source Audio (Melodic Skeleton)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/Liar_lNQZwPKL-n4_XXiuyH3CGtk_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/Liar_lNQZwPKL-n4_XXiuyH3CGtk_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Reference Audio (Target Texture)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/Liar_lNQZwPKL-n4_XXiuyH3CGtk_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/Liar_lNQZwPKL-n4_XXiuyH3CGtk_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 
   <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; text-align: center;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; color: #d9534f; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseAdapt (Ours) ✨</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/Liar_lNQZwPKL-n4_XXiuyH3CGtk_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/Liar_lNQZwPKL-n4_XXiuyH3CGtk_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/Liar_lNQZwPKL-n4_XXiuyH3CGtk_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/Liar_lNQZwPKL-n4_XXiuyH3CGtk_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/Liar_lNQZwPKL-n4_XXiuyH3CGtk_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/Liar_lNQZwPKL-n4_XXiuyH3CGtk_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseControlLite</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/Liar_lNQZwPKL-n4_XXiuyH3CGtk_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/Liar_lNQZwPKL-n4_XXiuyH3CGtk_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Base</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/Liar_lNQZwPKL-n4_XXiuyH3CGtk_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/Liar_lNQZwPKL-n4_XXiuyH3CGtk_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/Liar_lNQZwPKL-n4_XXiuyH3CGtk_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/Liar_lNQZwPKL-n4_XXiuyH3CGtk_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 </div>
@@ -400,38 +401,38 @@ In this challenging real-world scenario, models are tasked with generating a sty
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; text-align: center; margin-bottom: 20px;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Source Audio (Melodic Skeleton)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/Like I'm Gonna Lose You_31-7mgkSx0Q_K7jMUB6OvPY_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/Like I'm Gonna Lose You_31-7mgkSx0Q_K7jMUB6OvPY_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Reference Audio (Target Texture)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/Like I'm Gonna Lose You_31-7mgkSx0Q_K7jMUB6OvPY_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/Like I'm Gonna Lose You_31-7mgkSx0Q_K7jMUB6OvPY_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 
   <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; text-align: center;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; color: #d9534f; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseAdapt (Ours) ✨</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/Like I'm Gonna Lose You_31-7mgkSx0Q_K7jMUB6OvPY_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/Like I'm Gonna Lose You_31-7mgkSx0Q_K7jMUB6OvPY_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/Like I'm Gonna Lose You_31-7mgkSx0Q_K7jMUB6OvPY_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/Like I'm Gonna Lose You_31-7mgkSx0Q_K7jMUB6OvPY_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/Like I'm Gonna Lose You_31-7mgkSx0Q_K7jMUB6OvPY_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/Like I'm Gonna Lose You_31-7mgkSx0Q_K7jMUB6OvPY_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseControlLite</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/Like I'm Gonna Lose You_31-7mgkSx0Q_K7jMUB6OvPY_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/Like I'm Gonna Lose You_31-7mgkSx0Q_K7jMUB6OvPY_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Base</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/Like I'm Gonna Lose You_31-7mgkSx0Q_K7jMUB6OvPY_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/Like I'm Gonna Lose You_31-7mgkSx0Q_K7jMUB6OvPY_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/Like I'm Gonna Lose You_31-7mgkSx0Q_K7jMUB6OvPY_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/Like I'm Gonna Lose You_31-7mgkSx0Q_K7jMUB6OvPY_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 </div>
@@ -445,38 +446,38 @@ In this challenging real-world scenario, models are tasked with generating a sty
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; text-align: center; margin-bottom: 20px;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Source Audio (Melodic Skeleton)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/Like I'm Gonna Lose You_GB-AKi7_EYo_8n0bYPTM2f4_5.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/Like I'm Gonna Lose You_GB-AKi7_EYo_8n0bYPTM2f4_5.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Reference Audio (Target Texture)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/Like I'm Gonna Lose You_GB-AKi7_EYo_8n0bYPTM2f4_5.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/Like I'm Gonna Lose You_GB-AKi7_EYo_8n0bYPTM2f4_5.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 
   <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; text-align: center;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; color: #d9534f; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseAdapt (Ours) ✨</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/Like I'm Gonna Lose You_GB-AKi7_EYo_8n0bYPTM2f4_5.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/Like I'm Gonna Lose You_GB-AKi7_EYo_8n0bYPTM2f4_5.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/Like I'm Gonna Lose You_GB-AKi7_EYo_8n0bYPTM2f4_5.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/Like I'm Gonna Lose You_GB-AKi7_EYo_8n0bYPTM2f4_5.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/Like I'm Gonna Lose You_GB-AKi7_EYo_8n0bYPTM2f4_5.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/Like I'm Gonna Lose You_GB-AKi7_EYo_8n0bYPTM2f4_5.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseControlLite</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/Like I'm Gonna Lose You_GB-AKi7_EYo_8n0bYPTM2f4_5.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/Like I'm Gonna Lose You_GB-AKi7_EYo_8n0bYPTM2f4_5.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Base</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/Like I'm Gonna Lose You_GB-AKi7_EYo_8n0bYPTM2f4_5.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/Like I'm Gonna Lose You_GB-AKi7_EYo_8n0bYPTM2f4_5.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/Like I'm Gonna Lose You_GB-AKi7_EYo_8n0bYPTM2f4_5.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/Like I'm Gonna Lose You_GB-AKi7_EYo_8n0bYPTM2f4_5.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 </div>
@@ -490,38 +491,38 @@ In this challenging real-world scenario, models are tasked with generating a sty
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; text-align: center; margin-bottom: 20px;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Source Audio (Melodic Skeleton)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/Like I'm Gonna Lose You_GCwGFSleIo4_GB-AKi7_EYo_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/Like I'm Gonna Lose You_GCwGFSleIo4_GB-AKi7_EYo_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Reference Audio (Target Texture)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/Like I'm Gonna Lose You_GCwGFSleIo4_GB-AKi7_EYo_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/Like I'm Gonna Lose You_GCwGFSleIo4_GB-AKi7_EYo_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 
   <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; text-align: center;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; color: #d9534f; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseAdapt (Ours) ✨</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/Like I'm Gonna Lose You_GCwGFSleIo4_GB-AKi7_EYo_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/Like I'm Gonna Lose You_GCwGFSleIo4_GB-AKi7_EYo_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/Like I'm Gonna Lose You_GCwGFSleIo4_GB-AKi7_EYo_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/Like I'm Gonna Lose You_GCwGFSleIo4_GB-AKi7_EYo_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/Like I'm Gonna Lose You_GCwGFSleIo4_GB-AKi7_EYo_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/Like I'm Gonna Lose You_GCwGFSleIo4_GB-AKi7_EYo_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseControlLite</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/Like I'm Gonna Lose You_GCwGFSleIo4_GB-AKi7_EYo_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/Like I'm Gonna Lose You_GCwGFSleIo4_GB-AKi7_EYo_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Base</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/Like I'm Gonna Lose You_GCwGFSleIo4_GB-AKi7_EYo_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/Like I'm Gonna Lose You_GCwGFSleIo4_GB-AKi7_EYo_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/Like I'm Gonna Lose You_GCwGFSleIo4_GB-AKi7_EYo_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/Like I'm Gonna Lose You_GCwGFSleIo4_GB-AKi7_EYo_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 </div>
@@ -535,38 +536,38 @@ In this challenging real-world scenario, models are tasked with generating a sty
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; text-align: center; margin-bottom: 20px;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Source Audio (Melodic Skeleton)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/Like I'm Gonna Lose You_K7jMUB6OvPY_ueabJWy2kSA_4.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/Like I'm Gonna Lose You_K7jMUB6OvPY_ueabJWy2kSA_4.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Reference Audio (Target Texture)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/Like I'm Gonna Lose You_K7jMUB6OvPY_ueabJWy2kSA_4.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/Like I'm Gonna Lose You_K7jMUB6OvPY_ueabJWy2kSA_4.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 
   <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; text-align: center;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; color: #d9534f; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseAdapt (Ours) ✨</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/Like I'm Gonna Lose You_K7jMUB6OvPY_ueabJWy2kSA_4.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/Like I'm Gonna Lose You_K7jMUB6OvPY_ueabJWy2kSA_4.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/Like I'm Gonna Lose You_K7jMUB6OvPY_ueabJWy2kSA_4.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/Like I'm Gonna Lose You_K7jMUB6OvPY_ueabJWy2kSA_4.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/Like I'm Gonna Lose You_K7jMUB6OvPY_ueabJWy2kSA_4.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/Like I'm Gonna Lose You_K7jMUB6OvPY_ueabJWy2kSA_4.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseControlLite</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/Like I'm Gonna Lose You_K7jMUB6OvPY_ueabJWy2kSA_4.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/Like I'm Gonna Lose You_K7jMUB6OvPY_ueabJWy2kSA_4.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Base</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/Like I'm Gonna Lose You_K7jMUB6OvPY_ueabJWy2kSA_4.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/Like I'm Gonna Lose You_K7jMUB6OvPY_ueabJWy2kSA_4.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/Like I'm Gonna Lose You_K7jMUB6OvPY_ueabJWy2kSA_4.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/Like I'm Gonna Lose You_K7jMUB6OvPY_ueabJWy2kSA_4.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 </div>
@@ -580,38 +581,38 @@ In this challenging real-world scenario, models are tasked with generating a sty
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; text-align: center; margin-bottom: 20px;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Source Audio (Melodic Skeleton)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/Little Do You Know_QB-JGUBRyzQ_bOIRLEpdiRk_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/Little Do You Know_QB-JGUBRyzQ_bOIRLEpdiRk_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Reference Audio (Target Texture)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/Little Do You Know_QB-JGUBRyzQ_bOIRLEpdiRk_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/Little Do You Know_QB-JGUBRyzQ_bOIRLEpdiRk_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 
   <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; text-align: center;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; color: #d9534f; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseAdapt (Ours) ✨</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/Little Do You Know_QB-JGUBRyzQ_bOIRLEpdiRk_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/Little Do You Know_QB-JGUBRyzQ_bOIRLEpdiRk_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/Little Do You Know_QB-JGUBRyzQ_bOIRLEpdiRk_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/Little Do You Know_QB-JGUBRyzQ_bOIRLEpdiRk_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/Little Do You Know_QB-JGUBRyzQ_bOIRLEpdiRk_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/Little Do You Know_QB-JGUBRyzQ_bOIRLEpdiRk_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseControlLite</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/Little Do You Know_QB-JGUBRyzQ_bOIRLEpdiRk_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/Little Do You Know_QB-JGUBRyzQ_bOIRLEpdiRk_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Base</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/Little Do You Know_QB-JGUBRyzQ_bOIRLEpdiRk_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/Little Do You Know_QB-JGUBRyzQ_bOIRLEpdiRk_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/Little Do You Know_QB-JGUBRyzQ_bOIRLEpdiRk_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/Little Do You Know_QB-JGUBRyzQ_bOIRLEpdiRk_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 </div>
@@ -625,38 +626,38 @@ In this challenging real-world scenario, models are tasked with generating a sty
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; text-align: center; margin-bottom: 20px;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Source Audio (Melodic Skeleton)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/New Rules_J8yl-QMPdqw_r5ZGEvMZZoQ_2.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/New Rules_J8yl-QMPdqw_r5ZGEvMZZoQ_2.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Reference Audio (Target Texture)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/New Rules_J8yl-QMPdqw_r5ZGEvMZZoQ_2.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/New Rules_J8yl-QMPdqw_r5ZGEvMZZoQ_2.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 
   <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; text-align: center;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; color: #d9534f; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseAdapt (Ours) ✨</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/New Rules_J8yl-QMPdqw_r5ZGEvMZZoQ_2.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/New Rules_J8yl-QMPdqw_r5ZGEvMZZoQ_2.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/New Rules_J8yl-QMPdqw_r5ZGEvMZZoQ_2.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/New Rules_J8yl-QMPdqw_r5ZGEvMZZoQ_2.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/New Rules_J8yl-QMPdqw_r5ZGEvMZZoQ_2.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/New Rules_J8yl-QMPdqw_r5ZGEvMZZoQ_2.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseControlLite</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/New Rules_J8yl-QMPdqw_r5ZGEvMZZoQ_2.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/New Rules_J8yl-QMPdqw_r5ZGEvMZZoQ_2.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Base</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/New Rules_J8yl-QMPdqw_r5ZGEvMZZoQ_2.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/New Rules_J8yl-QMPdqw_r5ZGEvMZZoQ_2.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/New Rules_J8yl-QMPdqw_r5ZGEvMZZoQ_2.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/New Rules_J8yl-QMPdqw_r5ZGEvMZZoQ_2.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 </div>
@@ -670,38 +671,38 @@ In this challenging real-world scenario, models are tasked with generating a sty
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; text-align: center; margin-bottom: 20px;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Source Audio (Melodic Skeleton)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/party favor_UtUTLHf08UQ_zVIX6YG_BGw_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/party favor_UtUTLHf08UQ_zVIX6YG_BGw_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Reference Audio (Target Texture)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/party favor_UtUTLHf08UQ_zVIX6YG_BGw_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/party favor_UtUTLHf08UQ_zVIX6YG_BGw_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 
   <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; text-align: center;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; color: #d9534f; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseAdapt (Ours) ✨</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/party favor_UtUTLHf08UQ_zVIX6YG_BGw_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/party favor_UtUTLHf08UQ_zVIX6YG_BGw_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/party favor_UtUTLHf08UQ_zVIX6YG_BGw_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/party favor_UtUTLHf08UQ_zVIX6YG_BGw_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/party favor_UtUTLHf08UQ_zVIX6YG_BGw_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/party favor_UtUTLHf08UQ_zVIX6YG_BGw_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseControlLite</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/party favor_UtUTLHf08UQ_zVIX6YG_BGw_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/party favor_UtUTLHf08UQ_zVIX6YG_BGw_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Base</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/party favor_UtUTLHf08UQ_zVIX6YG_BGw_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/party favor_UtUTLHf08UQ_zVIX6YG_BGw_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/party favor_UtUTLHf08UQ_zVIX6YG_BGw_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/party favor_UtUTLHf08UQ_zVIX6YG_BGw_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 </div>
@@ -715,38 +716,38 @@ In this challenging real-world scenario, models are tasked with generating a sty
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; text-align: center; margin-bottom: 20px;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Source Audio (Melodic Skeleton)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/party favor_pDeIopcyP8g_UtUTLHf08UQ_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/party favor_pDeIopcyP8g_UtUTLHf08UQ_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Reference Audio (Target Texture)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/party favor_pDeIopcyP8g_UtUTLHf08UQ_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/party favor_pDeIopcyP8g_UtUTLHf08UQ_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 
   <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; text-align: center;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; color: #d9534f; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseAdapt (Ours) ✨</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/party favor_pDeIopcyP8g_UtUTLHf08UQ_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/party favor_pDeIopcyP8g_UtUTLHf08UQ_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/party favor_pDeIopcyP8g_UtUTLHf08UQ_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/party favor_pDeIopcyP8g_UtUTLHf08UQ_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/party favor_pDeIopcyP8g_UtUTLHf08UQ_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/party favor_pDeIopcyP8g_UtUTLHf08UQ_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseControlLite</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/party favor_pDeIopcyP8g_UtUTLHf08UQ_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/party favor_pDeIopcyP8g_UtUTLHf08UQ_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Base</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/party favor_pDeIopcyP8g_UtUTLHf08UQ_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/party favor_pDeIopcyP8g_UtUTLHf08UQ_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/party favor_pDeIopcyP8g_UtUTLHf08UQ_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/party favor_pDeIopcyP8g_UtUTLHf08UQ_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 </div>
@@ -760,38 +761,38 @@ In this challenging real-world scenario, models are tasked with generating a sty
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; text-align: center; margin-bottom: 20px;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Source Audio (Melodic Skeleton)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/party favor_zVIX6YG_BGw_ICknngfS1N8_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/party favor_zVIX6YG_BGw_ICknngfS1N8_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Reference Audio (Target Texture)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/party favor_zVIX6YG_BGw_ICknngfS1N8_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/party favor_zVIX6YG_BGw_ICknngfS1N8_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 
   <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; text-align: center;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; color: #d9534f; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseAdapt (Ours) ✨</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/party favor_zVIX6YG_BGw_ICknngfS1N8_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/party favor_zVIX6YG_BGw_ICknngfS1N8_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/party favor_zVIX6YG_BGw_ICknngfS1N8_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/party favor_zVIX6YG_BGw_ICknngfS1N8_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/party favor_zVIX6YG_BGw_ICknngfS1N8_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/party favor_zVIX6YG_BGw_ICknngfS1N8_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseControlLite</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/party favor_zVIX6YG_BGw_ICknngfS1N8_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/party favor_zVIX6YG_BGw_ICknngfS1N8_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Base</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/party favor_zVIX6YG_BGw_ICknngfS1N8_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/party favor_zVIX6YG_BGw_ICknngfS1N8_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/party favor_zVIX6YG_BGw_ICknngfS1N8_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/party favor_zVIX6YG_BGw_ICknngfS1N8_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 </div>
@@ -805,38 +806,38 @@ In this challenging real-world scenario, models are tasked with generating a sty
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; text-align: center; margin-bottom: 20px;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Source Audio (Melodic Skeleton)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/因为爱情_MJJUgVuBCIc_vZWlcF4Aqac_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/因为爱情_MJJUgVuBCIc_vZWlcF4Aqac_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Reference Audio (Target Texture)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/因为爱情_MJJUgVuBCIc_vZWlcF4Aqac_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/因为爱情_MJJUgVuBCIc_vZWlcF4Aqac_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 
   <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; text-align: center;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; color: #d9534f; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseAdapt (Ours) ✨</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/因为爱情_MJJUgVuBCIc_vZWlcF4Aqac_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/因为爱情_MJJUgVuBCIc_vZWlcF4Aqac_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/因为爱情_MJJUgVuBCIc_vZWlcF4Aqac_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/因为爱情_MJJUgVuBCIc_vZWlcF4Aqac_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/因为爱情_MJJUgVuBCIc_vZWlcF4Aqac_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/因为爱情_MJJUgVuBCIc_vZWlcF4Aqac_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseControlLite</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/因为爱情_MJJUgVuBCIc_vZWlcF4Aqac_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/因为爱情_MJJUgVuBCIc_vZWlcF4Aqac_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Base</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/因为爱情_MJJUgVuBCIc_vZWlcF4Aqac_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/因为爱情_MJJUgVuBCIc_vZWlcF4Aqac_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/因为爱情_MJJUgVuBCIc_vZWlcF4Aqac_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/因为爱情_MJJUgVuBCIc_vZWlcF4Aqac_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 </div>
@@ -850,38 +851,38 @@ In this challenging real-world scenario, models are tasked with generating a sty
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; text-align: center; margin-bottom: 20px;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Source Audio (Melodic Skeleton)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/我愿意_6s_q8LkyOQc_h5lrsN79yCc_6.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/我愿意_6s_q8LkyOQc_h5lrsN79yCc_6.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Reference Audio (Target Texture)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/我愿意_6s_q8LkyOQc_h5lrsN79yCc_6.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/我愿意_6s_q8LkyOQc_h5lrsN79yCc_6.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 
   <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; text-align: center;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; color: #d9534f; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseAdapt (Ours) ✨</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/我愿意_6s_q8LkyOQc_h5lrsN79yCc_6.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/我愿意_6s_q8LkyOQc_h5lrsN79yCc_6.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/我愿意_6s_q8LkyOQc_h5lrsN79yCc_6.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/我愿意_6s_q8LkyOQc_h5lrsN79yCc_6.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/我愿意_6s_q8LkyOQc_h5lrsN79yCc_6.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/我愿意_6s_q8LkyOQc_h5lrsN79yCc_6.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseControlLite</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/我愿意_6s_q8LkyOQc_h5lrsN79yCc_6.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/我愿意_6s_q8LkyOQc_h5lrsN79yCc_6.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Base</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/我愿意_6s_q8LkyOQc_h5lrsN79yCc_6.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/我愿意_6s_q8LkyOQc_h5lrsN79yCc_6.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/我愿意_6s_q8LkyOQc_h5lrsN79yCc_6.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/我愿意_6s_q8LkyOQc_h5lrsN79yCc_6.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 </div>
@@ -895,38 +896,38 @@ In this challenging real-world scenario, models are tasked with generating a sty
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; text-align: center; margin-bottom: 20px;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Source Audio (Melodic Skeleton)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/我的好兄弟_CC3ik6EpROk_7TicCoD2sGs_6.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/我的好兄弟_CC3ik6EpROk_7TicCoD2sGs_6.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Reference Audio (Target Texture)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/我的好兄弟_CC3ik6EpROk_7TicCoD2sGs_6.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/我的好兄弟_CC3ik6EpROk_7TicCoD2sGs_6.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 
   <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; text-align: center;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; color: #d9534f; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseAdapt (Ours) ✨</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/我的好兄弟_CC3ik6EpROk_7TicCoD2sGs_6.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/我的好兄弟_CC3ik6EpROk_7TicCoD2sGs_6.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/我的好兄弟_CC3ik6EpROk_7TicCoD2sGs_6.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/我的好兄弟_CC3ik6EpROk_7TicCoD2sGs_6.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/我的好兄弟_CC3ik6EpROk_7TicCoD2sGs_6.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/我的好兄弟_CC3ik6EpROk_7TicCoD2sGs_6.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseControlLite</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/我的好兄弟_CC3ik6EpROk_7TicCoD2sGs_6.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/我的好兄弟_CC3ik6EpROk_7TicCoD2sGs_6.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Base</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/我的好兄弟_CC3ik6EpROk_7TicCoD2sGs_6.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/我的好兄弟_CC3ik6EpROk_7TicCoD2sGs_6.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/我的好兄弟_CC3ik6EpROk_7TicCoD2sGs_6.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/我的好兄弟_CC3ik6EpROk_7TicCoD2sGs_6.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 </div>
@@ -940,38 +941,38 @@ In this challenging real-world scenario, models are tasked with generating a sty
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; text-align: center; margin-bottom: 20px;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Source Audio (Melodic Skeleton)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/斑马斑马_uuGG4Q0iy-s_GBFAfAkx2Zg_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/斑马斑马_uuGG4Q0iy-s_GBFAfAkx2Zg_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Reference Audio (Target Texture)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/斑马斑马_uuGG4Q0iy-s_GBFAfAkx2Zg_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/斑马斑马_uuGG4Q0iy-s_GBFAfAkx2Zg_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 
   <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; text-align: center;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; color: #d9534f; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseAdapt (Ours) ✨</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/斑马斑马_uuGG4Q0iy-s_GBFAfAkx2Zg_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/斑马斑马_uuGG4Q0iy-s_GBFAfAkx2Zg_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/斑马斑马_uuGG4Q0iy-s_GBFAfAkx2Zg_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/斑马斑马_uuGG4Q0iy-s_GBFAfAkx2Zg_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/斑马斑马_uuGG4Q0iy-s_GBFAfAkx2Zg_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/斑马斑马_uuGG4Q0iy-s_GBFAfAkx2Zg_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseControlLite</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/斑马斑马_uuGG4Q0iy-s_GBFAfAkx2Zg_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/斑马斑马_uuGG4Q0iy-s_GBFAfAkx2Zg_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Base</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/斑马斑马_uuGG4Q0iy-s_GBFAfAkx2Zg_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/斑马斑马_uuGG4Q0iy-s_GBFAfAkx2Zg_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/斑马斑马_uuGG4Q0iy-s_GBFAfAkx2Zg_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/斑马斑马_uuGG4Q0iy-s_GBFAfAkx2Zg_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 </div>
@@ -985,38 +986,38 @@ In this challenging real-world scenario, models are tasked with generating a sty
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; text-align: center; margin-bottom: 20px;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Source Audio (Melodic Skeleton)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/斑马斑马_uuGG4Q0iy-s_czu_8VAvP4U_3.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/斑马斑马_uuGG4Q0iy-s_czu_8VAvP4U_3.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Reference Audio (Target Texture)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/斑马斑马_uuGG4Q0iy-s_czu_8VAvP4U_3.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/斑马斑马_uuGG4Q0iy-s_czu_8VAvP4U_3.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 
   <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; text-align: center;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; color: #d9534f; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseAdapt (Ours) ✨</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/斑马斑马_uuGG4Q0iy-s_czu_8VAvP4U_3.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/斑马斑马_uuGG4Q0iy-s_czu_8VAvP4U_3.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/斑马斑马_uuGG4Q0iy-s_czu_8VAvP4U_3.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/斑马斑马_uuGG4Q0iy-s_czu_8VAvP4U_3.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/斑马斑马_uuGG4Q0iy-s_czu_8VAvP4U_3.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/斑马斑马_uuGG4Q0iy-s_czu_8VAvP4U_3.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseControlLite</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/斑马斑马_uuGG4Q0iy-s_czu_8VAvP4U_3.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/斑马斑马_uuGG4Q0iy-s_czu_8VAvP4U_3.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Base</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/斑马斑马_uuGG4Q0iy-s_czu_8VAvP4U_3.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/斑马斑马_uuGG4Q0iy-s_czu_8VAvP4U_3.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/斑马斑马_uuGG4Q0iy-s_czu_8VAvP4U_3.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/斑马斑马_uuGG4Q0iy-s_czu_8VAvP4U_3.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 </div>
@@ -1030,38 +1031,38 @@ In this challenging real-world scenario, models are tasked with generating a sty
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; text-align: center; margin-bottom: 20px;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Source Audio (Melodic Skeleton)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/斑马斑马_uuGG4Q0iy-s_u1wVezN0c10_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/斑马斑马_uuGG4Q0iy-s_u1wVezN0c10_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Reference Audio (Target Texture)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/斑马斑马_uuGG4Q0iy-s_u1wVezN0c10_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/斑马斑马_uuGG4Q0iy-s_u1wVezN0c10_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 
   <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; text-align: center;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; color: #d9534f; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseAdapt (Ours) ✨</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/斑马斑马_uuGG4Q0iy-s_u1wVezN0c10_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/斑马斑马_uuGG4Q0iy-s_u1wVezN0c10_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/斑马斑马_uuGG4Q0iy-s_u1wVezN0c10_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/斑马斑马_uuGG4Q0iy-s_u1wVezN0c10_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/斑马斑马_uuGG4Q0iy-s_u1wVezN0c10_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/斑马斑马_uuGG4Q0iy-s_u1wVezN0c10_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseControlLite</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/斑马斑马_uuGG4Q0iy-s_u1wVezN0c10_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/斑马斑马_uuGG4Q0iy-s_u1wVezN0c10_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Base</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/斑马斑马_uuGG4Q0iy-s_u1wVezN0c10_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/斑马斑马_uuGG4Q0iy-s_u1wVezN0c10_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/斑马斑马_uuGG4Q0iy-s_u1wVezN0c10_0.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/斑马斑马_uuGG4Q0iy-s_u1wVezN0c10_0.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 </div>
@@ -1075,38 +1076,38 @@ In this challenging real-world scenario, models are tasked with generating a sty
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; text-align: center; margin-bottom: 20px;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Source Audio (Melodic Skeleton)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/枫_lmi54fAwzRc_mwUbFi4rRIs_2.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/枫_lmi54fAwzRc_mwUbFi4rRIs_2.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Reference Audio (Target Texture)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/枫_lmi54fAwzRc_mwUbFi4rRIs_2.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/枫_lmi54fAwzRc_mwUbFi4rRIs_2.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 
   <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; text-align: center;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; color: #d9534f; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseAdapt (Ours) ✨</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/枫_lmi54fAwzRc_mwUbFi4rRIs_2.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/枫_lmi54fAwzRc_mwUbFi4rRIs_2.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/枫_lmi54fAwzRc_mwUbFi4rRIs_2.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/枫_lmi54fAwzRc_mwUbFi4rRIs_2.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/枫_lmi54fAwzRc_mwUbFi4rRIs_2.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/枫_lmi54fAwzRc_mwUbFi4rRIs_2.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseControlLite</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/枫_lmi54fAwzRc_mwUbFi4rRIs_2.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/枫_lmi54fAwzRc_mwUbFi4rRIs_2.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Base</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/枫_lmi54fAwzRc_mwUbFi4rRIs_2.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/枫_lmi54fAwzRc_mwUbFi4rRIs_2.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/枫_lmi54fAwzRc_mwUbFi4rRIs_2.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/枫_lmi54fAwzRc_mwUbFi4rRIs_2.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 </div>
@@ -1120,38 +1121,38 @@ In this challenging real-world scenario, models are tasked with generating a sty
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; text-align: center; margin-bottom: 20px;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Source Audio (Melodic Skeleton)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/童话_HueBMrUEH6g_KHdGaIg2bcU_4.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/童话_HueBMrUEH6g_KHdGaIg2bcU_4.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Reference Audio (Target Texture)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/童话_HueBMrUEH6g_KHdGaIg2bcU_4.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/童话_HueBMrUEH6g_KHdGaIg2bcU_4.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 
   <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; text-align: center;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; color: #d9534f; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseAdapt (Ours) ✨</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/童话_HueBMrUEH6g_KHdGaIg2bcU_4.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/童话_HueBMrUEH6g_KHdGaIg2bcU_4.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/童话_HueBMrUEH6g_KHdGaIg2bcU_4.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/童话_HueBMrUEH6g_KHdGaIg2bcU_4.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/童话_HueBMrUEH6g_KHdGaIg2bcU_4.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/童话_HueBMrUEH6g_KHdGaIg2bcU_4.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseControlLite</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/童话_HueBMrUEH6g_KHdGaIg2bcU_4.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/童话_HueBMrUEH6g_KHdGaIg2bcU_4.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Base</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/童话_HueBMrUEH6g_KHdGaIg2bcU_4.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/童话_HueBMrUEH6g_KHdGaIg2bcU_4.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/童话_HueBMrUEH6g_KHdGaIg2bcU_4.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/童话_HueBMrUEH6g_KHdGaIg2bcU_4.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 </div>
@@ -1165,38 +1166,38 @@ In this challenging real-world scenario, models are tasked with generating a sty
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; text-align: center; margin-bottom: 20px;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Source Audio (Melodic Skeleton)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/至少还有你_9PHGtxWF2rI_o7KSBgxBvFY_2.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/至少还有你_9PHGtxWF2rI_o7KSBgxBvFY_2.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Reference Audio (Target Texture)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/至少还有你_9PHGtxWF2rI_o7KSBgxBvFY_2.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/至少还有你_9PHGtxWF2rI_o7KSBgxBvFY_2.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 
   <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; text-align: center;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; color: #d9534f; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseAdapt (Ours) ✨</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/至少还有你_9PHGtxWF2rI_o7KSBgxBvFY_2.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/至少还有你_9PHGtxWF2rI_o7KSBgxBvFY_2.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/至少还有你_9PHGtxWF2rI_o7KSBgxBvFY_2.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/至少还有你_9PHGtxWF2rI_o7KSBgxBvFY_2.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/至少还有你_9PHGtxWF2rI_o7KSBgxBvFY_2.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/至少还有你_9PHGtxWF2rI_o7KSBgxBvFY_2.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseControlLite</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/至少还有你_9PHGtxWF2rI_o7KSBgxBvFY_2.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/至少还有你_9PHGtxWF2rI_o7KSBgxBvFY_2.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Base</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/至少还有你_9PHGtxWF2rI_o7KSBgxBvFY_2.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/至少还有你_9PHGtxWF2rI_o7KSBgxBvFY_2.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/至少还有你_9PHGtxWF2rI_o7KSBgxBvFY_2.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/至少还有你_9PHGtxWF2rI_o7KSBgxBvFY_2.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 </div>
@@ -1210,38 +1211,38 @@ In this challenging real-world scenario, models are tasked with generating a sty
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; text-align: center; margin-bottom: 20px;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Source Audio (Melodic Skeleton)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/被遗忘的时光_64VPcw2MAEE_BsKOSZJeU_c_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/被遗忘的时光_64VPcw2MAEE_BsKOSZJeU_c_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Reference Audio (Target Texture)</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/被遗忘的时光_64VPcw2MAEE_BsKOSZJeU_c_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/被遗忘的时光_64VPcw2MAEE_BsKOSZJeU_c_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 
   <div style="display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 10px; text-align: center;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; color: #d9534f; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseAdapt (Ours) ✨</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/被遗忘的时光_64VPcw2MAEE_BsKOSZJeU_c_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/被遗忘的时光_64VPcw2MAEE_BsKOSZJeU_c_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/被遗忘的时光_64VPcw2MAEE_BsKOSZJeU_c_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/被遗忘的时光_64VPcw2MAEE_BsKOSZJeU_c_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MusicGen-Melody-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/被遗忘的时光_64VPcw2MAEE_BsKOSZJeU_c_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/被遗忘的时光_64VPcw2MAEE_BsKOSZJeU_c_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">MuseControlLite</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/被遗忘的时光_64VPcw2MAEE_BsKOSZJeU_c_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/被遗忘的时光_64VPcw2MAEE_BsKOSZJeU_c_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Base</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/被遗忘的时光_64VPcw2MAEE_BsKOSZJeU_c_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/被遗忘的时光_64VPcw2MAEE_BsKOSZJeU_c_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
       <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">SongEcho-Large</div>
-      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/被遗忘的时光_64VPcw2MAEE_BsKOSZJeU_c_1.wav" controls preload="metadata" style="width: 100%; outline: none;"></audio>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/被遗忘的时光_64VPcw2MAEE_BsKOSZJeU_c_1.wav" controls style="width: 100%; outline: none;"></audio>
     </div>
   </div>
 </div>
