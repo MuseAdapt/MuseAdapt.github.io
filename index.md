@@ -29,7 +29,7 @@ To demonstrate the superiority of **MuseAdapt** in decoupling structure from tex
 
 <div style="background-color: #f8f9fa; padding: 14px 16px; border-radius: 10px; margin: 20px 0 24px; border: 1px solid #dee2e6;">
   <div style="font-weight: bold; color: #444; margin-bottom: 10px; font-size: 1.05em;">Quick Navigation</div>
-  <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+  <div style="display: flex; flex-wrap: wrap; gap: 10px; text-align: center;">
     <a href="#part1" style="flex: 1; min-width: 220px; text-decoration: none; color: inherit; background: white; border: 1px solid #ddd; border-radius: 8px; padding: 12px 14px; display: block;">
       <div style="font-weight: bold; margin-bottom: 4px;">Part 1: Music Adaptation Task</div>
       <div style="font-size: 0.9em; color: #666;">Real-world melody-aware adaptation examples</div>
