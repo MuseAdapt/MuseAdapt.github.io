@@ -27,7 +27,23 @@ As discussed in our paper, existing melody-conditioned models trained via the **
 
 To demonstrate the superiority of **MuseAdapt** in decoupling structure from texture, we present our audio samples in two distinct parts. The baseline models include: [MusicGen-Stereo-Melody](https://huggingface.co/facebook/musicgen-stereo-melody)<a href="#note1" id="note1ref">[1]</a>, [MusicGen-Stereo-Melody-Large](https://huggingface.co/facebook/musicgen-stereo-melody-large)<a href="#note1" id="note1ref">[1]</a>, [MuseControlLite](https://huggingface.co/fundwotsai2001/Text-to-Music_control_family)<a href="#note2" id="note2ref">[2]</a>, [SongEcho-base](https://huggingface.co/fundwotsai2001/Text-to-Music_control_family)<a href="#note3" id="note3ref">[3]</a>, and [SongEcho-large](https://huggingface.co/fundwotsai2001/Text-to-Music_control_family)<a href="#note3" id="note3ref">[3]</a>. All generated samples are approximately **47 seconds** long.
 
+<div style="background-color: #f8f9fa; padding: 14px 16px; border-radius: 10px; margin: 20px 0 24px; border: 1px solid #dee2e6;">
+  <div style="font-weight: bold; color: #444; margin-bottom: 10px; font-size: 1.05em;">Quick Navigation</div>
+  <div style="display: flex; flex-wrap: wrap; gap: 10px;">
+    <a href="#part1" style="flex: 1; min-width: 220px; text-decoration: none; color: inherit; background: white; border: 1px solid #ddd; border-radius: 8px; padding: 12px 14px; display: block;">
+      <div style="font-weight: bold; margin-bottom: 4px;">Part 1: Music Adaptation Task</div>
+      <div style="font-size: 0.9em; color: #666;">Real-world melody-aware adaptation examples</div>
+    </a>
+    <a href="#part2" style="flex: 1; min-width: 220px; text-decoration: none; color: inherit; background: white; border: 1px solid #ddd; border-radius: 8px; padding: 12px 14px; display: block;">
+      <div style="font-weight: bold; margin-bottom: 4px;">Part 2: The Generalization Gap</div>
+      <div style="font-size: 0.9em; color: #666;">Self-reconstruction vs. adaptation comparison</div>
+    </a>
+  </div>
+</div>
+
 ---
+
+<div id="part1"></div>
 
 ## Part 1: Music Adaptation Task
 In this challenging real-world scenario, models are tasked with generating a stylistically distinct audio segment based on a text prompt, while preserving the perceptual melodic identity of the source audio. **Our model (MuseAdapt) successfully disentangles the melody and follows the text prompt, whereas baselines often simply replicate the source texture.**
@@ -1251,6 +1267,8 @@ In this challenging real-world scenario, models are tasked with generating a sty
 
 <br>
 
+<div id="part2"></div>
+
 ## Part 2: The Generalization Gap (Self-Reconstruction vs. Adaptation)
 
 **Why do baselines fail in Part 1?** This section reveals the root cause by comparing each model's performance across two settings: **Self-Reconstruction** (where the melody condition is extracted from the target itself) and **Music Adaptation** (where the melody condition comes from a different source).
@@ -1930,7 +1948,7 @@ In the self-reconstruction task, baselines sound excellent because they are oper
 <div style="background-color: #f8f9fa; padding: 15px; border-radius: 10px; margin-bottom: 30px; border: 1px solid #dee2e6;">
   <h4>🔄 Example 11: Erhu (a Chinese two-stringed fiddle) ➔ Piano</h4>
   <p><b>Song Name:</b> <i>枫</i></p>
-  <p><b>Text Prompt:</b> <i>This musical piece exclusively features a solo piano, played with a resonant and clear sound that utilizes legato articulation for melodies and both arpeggiated and block chords for harmonic support.</i></p>
+  <p><b>Text Prompt:</b> <i>This musical piece exclusively features a solo piano, played with a resonant and clear sound that utilizes legato articulation for melodies and both arpeggiated and block chords for harmonic support. The piano's timbre is rich and warm, shifting from a mellow, gentle quality in quiet passages to a brighter, more brilliant and percussive character during moments of high intensity.</i></p>
   
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; text-align: center; margin-bottom: 20px;">
     <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
