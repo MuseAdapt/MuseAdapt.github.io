@@ -1247,6 +1247,81 @@ In this challenging real-world scenario, models are tasked with generating a sty
   </div>
 </div>
 
+---
+
+## Part 2: The Generalization Gap (Self-Reconstruction vs. Adaptation)
+
+**Why do baselines fail in Part 1?** This section reveals the root cause by comparing each model's performance across two settings: **Self-Reconstruction** (where the melody condition is extracted from the target itself) and **Music Adaptation** (where the melody condition comes from a different source).
+
+In the self-reconstruction task, baselines sound excellent because they are operating within their biased training paradigm. However, when shifting to the adaptation task, their ability to follow text descriptions drops drastically (as evidenced by the sharp decline in CLAP scores in our paper). By comparing the two tasks side-by-side for each model below, you can hear this **"Generalization Gap"** clearly in the baselines, whereas **MuseAdapt maintains highly consistent quality and text-adherence across both scenarios.**
+
+<div style="background-color: #f8f9fa; padding: 15px; border-radius: 10px; margin-bottom: 30px; border: 1px solid #dee2e6;">
+  <h4>🔄 Example 1: The Generalization Gap</h4>
+  <p><b>Song Name:</b> <i>Darkside</i></p>
+  <p><b>Text Prompt:</b> <i>This piece features a solo harp, whose timbre is consistently bright and resonant, producing a clear, bell-like quality in its higher register and a warm, full-bodied tone in its lower notes. Stylistically, the music aligns with a contemplative genre such as New Age or solo instrumental, characterized by a slow, flowing tempo and a consonant, tonal harmony that creates a peaceful atmosphere.</i></p>
+  
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px; text-align: center; margin-bottom: 20px;">
+    <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
+      <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Source Audio</div>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/src/Darkside_yxhhDNIv3P4_cB2l0OnjG6M_1.wav" controls style="width: 100%; outline: none;"></audio>
+    </div>
+    <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px;">
+      <div style="font-weight: bold; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 8px;">Target Audio</div>
+      <audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/dst/Darkside_yxhhDNIv3P4_cB2l0OnjG6M_1.wav" controls style="width: 100%; outline: none;"></audio>
+    </div>
+  </div>
+
+  <div style="display: grid; grid-template-columns: 180px 1fr 1fr; gap: 15px; text-align: center; margin-bottom: 15px;">
+    <div></div>
+    <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 12px 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
+      <div style="font-weight: bold; color: #444; margin-bottom: 5px; font-size: 1.05em;">Task 1: Self-Reconstruction</div>
+      <div style="font-size: 0.85em; color: #666;">
+        Melody Condition is extracted from the <b>Target Audio</b>
+      </div>
+    </div>
+    <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 12px 10px; box-shadow: 0 2px 4px rgba(0,0,0,0.02);">
+      <div style="font-weight: bold; color: #444; margin-bottom: 5px; font-size: 1.05em;">Task 2: Music Adaptation</div>
+      <div style="font-size: 0.85em; color: #666;">
+        Melody Condition is extracted from the <b>Source Audio</b>
+      </div>
+    </div>
+  </div>
+
+  <div style="display: flex; flex-direction: column; gap: 10px;">
+    <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px; display: grid; grid-template-columns: 180px 1fr 1fr; gap: 15px; align-items: center; text-align: center;">
+      <div style="font-weight: bold; color: #d9534f; border-right: 1px solid #eee; padding-right: 10px;">MuseAdapt (Ours) ✨</div>
+      <div><audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/self_rec/Darkside_yxhhDNIv3P4_cB2l0OnjG6M_1.wav" controls style="width: 100%; outline: none;"></audio></div>
+      <div><audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/ours/transfer/Darkside_yxhhDNIv3P4_cB2l0OnjG6M_1.wav" controls style="width: 100%; outline: none;"></audio></div>
+    </div>
+    <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px; display: grid; grid-template-columns: 180px 1fr 1fr; gap: 15px; align-items: center; text-align: center;">
+      <div style="font-weight: bold; border-right: 1px solid #eee; padding-right: 10px;">MuseControlLite</div>
+      <div><audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/self_rec/Darkside_yxhhDNIv3P4_cB2l0OnjG6M_1.wav" controls style="width: 100%; outline: none;"></audio></div>
+      <div><audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musecontrollite/transfer/Darkside_yxhhDNIv3P4_cB2l0OnjG6M_1.wav" controls style="width: 100%; outline: none;"></audio></div>
+    </div>
+    <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px; display: grid; grid-template-columns: 180px 1fr 1fr; gap: 15px; align-items: center; text-align: center;">
+      <div style="font-weight: bold; border-right: 1px solid #eee; padding-right: 10px;">SongEcho-Base</div>
+      <div><audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/self_rec/Darkside_yxhhDNIv3P4_cB2l0OnjG6M_1.wav" controls style="width: 100%; outline: none;"></audio></div>
+      <div><audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_base/transfer/Darkside_yxhhDNIv3P4_cB2l0OnjG6M_1.wav" controls style="width: 100%; outline: none;"></audio></div>
+    </div>
+    <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px; display: grid; grid-template-columns: 180px 1fr 1fr; gap: 15px; align-items: center; text-align: center;">
+      <div style="font-weight: bold; border-right: 1px solid #eee; padding-right: 10px;">SongEcho-Large</div>
+      <div><audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/self_rec/Darkside_yxhhDNIv3P4_cB2l0OnjG6M_1.wav" controls style="width: 100%; outline: none;"></audio></div>
+      <div><audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/songecho_large/transfer/Darkside_yxhhDNIv3P4_cB2l0OnjG6M_1.wav" controls style="width: 100%; outline: none;"></audio></div>
+    </div>
+    <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px; display: grid; grid-template-columns: 180px 1fr 1fr; gap: 15px; align-items: center; text-align: center;">
+      <div style="font-weight: bold; border-right: 1px solid #eee; padding-right: 10px;">MusicGen-Melody</div>
+      <div><audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/self_rec/Darkside_yxhhDNIv3P4_cB2l0OnjG6M_1.wav" controls style="width: 100%; outline: none;"></audio></div>
+      <div><audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody/transfer/Darkside_yxhhDNIv3P4_cB2l0OnjG6M_1.wav" controls style="width: 100%; outline: none;"></audio></div>
+    </div>
+    <div style="background: white; border: 1px solid #ddd; border-radius: 8px; padding: 10px; display: grid; grid-template-columns: 180px 1fr 1fr; gap: 15px; align-items: center; text-align: center;">
+      <div style="font-weight: bold; border-right: 1px solid #eee; padding-right: 10px;">MusicGen-Melody-Large</div>
+      <div><audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/self_rec/Darkside_yxhhDNIv3P4_cB2l0OnjG6M_1.wav" controls style="width: 100%; outline: none;"></audio></div>
+      <div><audio src="https://huggingface.co/datasets/MuseAdapt/MuseAdapt_Demo/resolve/main/musicgen_melody_large/transfer/Darkside_yxhhDNIv3P4_cB2l0OnjG6M_1.wav" controls style="width: 100%; outline: none;"></audio></div>
+    </div>
+
+  </div>
+</div>
+
 
 # References 
 
