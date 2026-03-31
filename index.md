@@ -2156,7 +2156,7 @@ song generation via instance-adaptive element-wise linear modulation. In Proc. I
 
 <script>
   const TIMINGS = {
-    part2VisibleDelayMs: 5000,              // part2默认可见区域延迟加载
+    part2VisibleDelayMs: 10000,              // part2默认可见区域延迟加载
     foldedWarmupStartMs: 3500,              // 折叠区域在没有操作3.5s后开始预热
     foldedWarmupIdleIntervalMs: 500,        // 折叠区域正常预热间隔0.5s
     foldedWarmupPlayingIntervalMs: 1000,    // 折叠区域在有音频播放时的预热间隔1.0s
