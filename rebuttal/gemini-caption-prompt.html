@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MuseAdapt Rebuttal: Gemini-2.5 Pro Caption Prompt</title>
+  <style>
+    :root {
+      --bg: #f4f6f8;
+      --card: #ffffff;
+      --text: #222;
+      --muted: #5f6b76;
+      --border: #d9e0e6;
+      --accent: #d9534f;
+      --accent-soft: #fff4f3;
+      --code-bg: #fbfbfc;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+      background: linear-gradient(180deg, #f7f9fb 0%, #eef2f5 100%);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 48px 20px 72px;
+    }
+
+    .hero {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 28px 30px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+      margin-bottom: 24px;
+    }
+
+    .eyebrow {
+      display: inline-block;
+      font-size: 0.84rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border: 1px solid #f3c8c5;
+      border-radius: 999px;
+      padding: 5px 10px;
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      margin: 0 0 12px;
+      font-size: clamp(1.9rem, 4vw, 2.7rem);
+      line-height: 1.15;
+    }
+
+    h2 {
+      margin: 0 0 14px;
+      font-size: 1.25rem;
+    }
+
+    p {
+      margin: 0 0 12px;
+    }
+
+    .muted {
+      color: var(--muted);
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 18px;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 22px 22px 20px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.035);
+      margin-bottom: 20px;
+    }
+
+    .label {
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--muted);
+      margin-bottom: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    .value {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    pre {
+      margin: 0;
+      padding: 18px;
+      overflow-x: auto;
+      white-space: pre-wrap;
+      word-break: break-word;
+      border-radius: 14px;
+      border: 1px solid var(--border);
+      background: var(--code-bg);
+      font-size: 0.95rem;
+      line-height: 1.6;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+    }
+
+    code {
+      font-family: inherit;
+    }
+
+    .footer-note {
+      margin-top: 14px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    a {
+      color: #0b5cad;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <section class="hero">
+      <div class="eyebrow">MuseAdapt Rebuttal Material</div>
+      <h1>Prompt for Music Caption Generation</h1>
+      <p class="muted">
+        This page provides the exact prompt used for <strong> Gemini-2.5 Pro </strong> to generate music captions for our dataset construction pipeline. We present it here as supplementary rebuttal material.
+      </p>
+
+      <div class="grid">
+        <div class="card" style="margin-bottom: 0;">
+          <span class="label">Model</span>
+          <div class="value">Gemini-2.5 Pro</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Exact Prompt</h2>
+      <pre><code>Listen to the provided music and generate a detailed description strictly based on its content. Your description should be organized into the following sections:
+
+1. **Instruments**: 
+   - Identify the instruments used in the music.
+   - Describe any notable features of their sound (e.g., texture, articulation, etc.).
+
+2. **Timbre**:
+   - Describe the **timbre** of each instrument used in the piece. 
+
+3. **Genre and Style**:
+   - Describe the genre or style of the music.
+   - Include relevant characteristics (e.g., tempo, form, harmony, etc.).
+
+4. **Emotion and Mood**:
+   - Explain the emotions conveyed by the music.
+   - Describe how the music achieves these emotions (e.g., through instrumentation, tempo, dynamics, etc.).
+
+5. **Rhythm and Tempo**:
+   - Note the rhythm and tempo of the piece.
+   - Explain how the rhythm and tempo affect the overall feel of the music.
+
+6. **Dynamics**:
+   - Describe the variations in volume and intensity throughout the music.
+   - Mention specific dynamics such as **crescendo**, where the volume gradually increases, and **decrescendo**, where the volume gradually decreases.
+   - How do these changes in dynamics contribute to the emotional or structural development of the piece?
+
+Answer in a paragraph. Ensure the description is concise yet thorough, based strictly on what is heard, and free of unrelated interpretations. The response should be in English with non-repetitive, varied sentences. Use clear, concise language, and make sure the description is well-organized and structured.</code></pre>
+    </section>
+
+    <section class="card">
+      <h2>Usage Note</h2>
+      <p>
+        This prompt was designed to encourage captions that are descriptive, audio-grounded, and stylistically informative,
+        while avoiding irrelevant interpretation. In particular, it asks Gemini-2.5 Pro to focus on instrumentation, timbre,
+        genre/style, emotion, rhythm/tempo, and dynamics, and to return the final caption in a single concise paragraph.
+      </p>
+      <p class="footer-note">
+        Main project page: <a href="/">MuseAdapt Demo Page</a>
+      </p>
+    </section>
+  </main>
+</body>
+</html>
