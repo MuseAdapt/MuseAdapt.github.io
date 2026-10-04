@@ -1,18 +1,18 @@
 <div style="text-align: center"> 
 
-<h1> MuseAdapt: Melody-Aware Music Adaptation <br> via Structure-Texture Disentanglement </h1>
+<h1> MuseAdapt: Melody-Preserving Music Adaptation <br> with Representation and Reward Alignment </h1>
 
 Anonymous Authors
 
 <p>
-Supporting webpage for ICML 2026<br>
+Supporting webpage for ICLR 2027<br>
 </p>
 
 </div>
 
 # Abstract
 
-Melody-conditioned music generation is a cornerstone of controllable synthesis. However, existing self-reconstruction paradigms, which condition models on melodic features extracted from the target audio, often fail to separate semantic melody from acoustic texture. This entanglement encourages models to replicate the source audio rather than perform genuine melodic adaptation. To bridge this gap, we define melody-aware music adaptation (MAMA), a task focused on generating stylistically diverse music that preserves melodic identity without enforcing frame-level reconstruction. We introduce MAMA-20k, the first large-scale dataset for this task, featuring weakly paired segments with shared melodic skeletons but distinct acoustic realizations. Leveraging this data, we propose MuseAdapt, a diffusion-based framework that achieves disentangled melodic control via a contrastive encoder. Experiments demonstrate that MuseAdapt significantly outperforms self-reconstruction baselines in cross-instrument and real-world scenarios, highlighting the necessity of disentangled supervision for robust music synthesis.
+Melody-conditioned music generation provides fine-grained control over musical content, but adapting a reference recording to new musical conditions while faithfully preserving its melody remains challenging. Existing approaches often derive melody conditions from the same audio used as the generation target, causing the conditioning representation to retain source-specific acoustic characteristics and reducing its robustness to cross-style adaptation. To address this problem, we introduce MAMA-20k, a large-scale real-world dataset containing melody-aligned music pairs with shared melodic content and diverse acoustic realizations, and propose MuseAdapt, a framework for melody-preserving music adaptation through representation and reward alignment. For representation alignment, we train a convolutional–Transformer encoder to learn temporally structured melody representations from aligned music pairs and use them to control a pretrained flow-based music generator via ControlNet. For reward alignment, we construct preference pairs from complementary melody, key, and text-alignment rewards and further optimize the generator with direct preference optimization (DPO). Experiments show that MuseAdapt achieves substantially stronger target-condition adherence than reconstruction-oriented baselines while maintaining comparable melodic consistency, yielding a better balance between melody preservation and musical adaptation without sacrificing generation quality.
 
 **Open Source**: We will open-source our model, code, dataset metadata, and the data processing pipeline upon paper acceptance.
 <br>
